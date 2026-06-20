@@ -1,0 +1,30 @@
+<header class="sticky top-0 z-50 w-full border-b border-brand-dark-800 bg-brand-dark-950/80 backdrop-blur-md">
+  <div class="mx-auto flex max-w-7xl h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
+    <!-- Logo -->
+    <a href="#" class="flex items-center gap-3 group">
+      <img src="funput_logo.svg" alt="Funput Logo" class="h-9 w-auto transition-transform duration-300 group-hover:scale-105" />
+      <span class="text-xl font-bold tracking-tight text-white group-hover:text-brand-orange-500 transition-colors">
+        Funput
+      </span>
+    </a>
+
+    <!-- Navigation -->
+    <nav class="hidden md:flex items-center gap-8">
+      <a href="#features" class="text-sm font-medium text-zinc-400 hover:text-white transition-colors">Tính năng</a>
+      <a href="#platforms" class="text-sm font-medium text-zinc-400 hover:text-white transition-colors">Nền tảng</a>
+      <a href="#typing-styles" class="text-sm font-medium text-zinc-400 hover:text-white transition-colors">Kiểu gõ</a>
+      <a href="#contact" class="text-sm font-medium text-zinc-400 hover:text-white transition-colors">Liên hệ</a>
+    </nav>
+
+    <!-- CTA -->
+    <div class="flex items-center gap-4">
+      <a [href]="constants.GITHUB_URL" target="_blank" rel="noopener" class="hidden sm:flex text-zinc-400 hover:text-white transition-colors" aria-label="GitHub">
+        <img src="github.svg" alt="GitHub" class="h-5 w-5 invert opacity-80 hover:opacity-100 transition-opacity" />
+      </a>
+      <a [href]="constants.RELEASES_URL" target="_blank" rel="noopener" 
+         class="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-brand-orange-500 via-brand-pink-500 to-brand-purple-500 px-5 py-2 text-sm font-semibold text-white shadow-lg shadow-brand-orange-500/20 hover:shadow-brand-orange-500/30 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200">
+        Tải ngay
+      </a>
+    </div>
+  </div>
+</header>

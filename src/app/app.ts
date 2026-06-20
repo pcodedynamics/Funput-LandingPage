@@ -1,12 +1,19 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core';
+import { HeaderComponent } from './components/header/header';
+import { HeroComponent } from './components/hero/hero';
+import { PlatformsComponent } from './components/platforms/platforms';
+import { FeaturesComponent } from './components/features/features';
+import { FooterComponent } from './components/footer/footer';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [
+    HeaderComponent,
+    HeroComponent,
+    PlatformsComponent,
+    FeaturesComponent,
+    FooterComponent,
+  ],
   templateUrl: './app.html',
-  styleUrl: './app.css'
 })
-export class App {
-  protected readonly title = signal('funput');
-}
+export class App {}

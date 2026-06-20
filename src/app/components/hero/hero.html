@@ -1,0 +1,126 @@
+<section class="mx-auto max-w-7xl px-4 pt-16 pb-24 sm:px-6 lg:px-8 lg:pt-24">
+  <div class="grid grid-cols-1 gap-16 lg:grid-cols-12 lg:items-center">
+    <!-- Hero Text -->
+    <div class="lg:col-span-6 text-center lg:text-left">
+      <div class="inline-flex items-center gap-2 rounded-full border border-brand-orange-500/30 bg-brand-orange-500/10 px-3 py-1 text-xs font-medium text-brand-orange-500 mb-6">
+        <span class="flex h-1.5 w-1.5 rounded-full bg-brand-orange-500 animate-pulse"></span>
+        Bộ gõ tiếng Việt thế hệ mới bằng Rust
+      </div>
+      
+      <h1 class="text-4xl font-extrabold tracking-tight text-white sm:text-5xl md:text-6xl lg:leading-tight">
+        Gõ là <span class="bg-gradient-to-r from-brand-orange-500 via-brand-pink-500 to-brand-purple-500 bg-clip-text text-transparent">Fun</span>,<br />
+        Input là chuẩn.
+      </h1>
+      
+      <p class="mt-6 text-lg text-zinc-400 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+        Funput là bộ gõ Telex & VNI mã nguồn mở, siêu nhẹ và an toàn tuyệt đối. Cài đặt một lần, gõ mượt mà trên macOS, Windows và Linux mà không cần cấu hình phức tạp.
+      </p>
+
+      <div class="mt-10 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+        <a [href]="constants.RELEASES_URL" target="_blank" rel="noopener"
+           class="w-full sm:w-auto inline-flex items-center justify-center rounded-full bg-brand-orange-500 px-8 py-4 text-base font-semibold text-white shadow-lg shadow-brand-orange-500/20 hover:bg-brand-orange-600 hover:shadow-brand-orange-600/30 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200">
+          Tải bản mới nhất
+        </a>
+        <a [href]="constants.GITHUB_URL" target="_blank" rel="noopener"
+           class="w-full sm:w-auto inline-flex items-center justify-center rounded-full border border-zinc-700 bg-brand-dark-900 px-8 py-4 text-base font-semibold text-zinc-300 hover:bg-brand-dark-800 hover:text-white hover:border-zinc-600 transition-all duration-200">
+          Xem mã nguồn GitHub
+        </a>
+      </div>
+    </div>
+
+    <!-- Interactive Typing Demo -->
+    <div class="lg:col-span-6">
+      <div class="relative rounded-2xl border border-brand-dark-800 bg-brand-dark-900 p-6 shadow-2xl shadow-brand-orange-500/5">
+        <!-- Card Glow Header -->
+        <div class="absolute -top-px left-10 right-10 h-px bg-gradient-to-r from-transparent via-brand-orange-500/50 to-transparent"></div>
+        
+        <!-- Editor Header -->
+        <div class="flex items-center justify-between border-b border-brand-dark-800 pb-4 mb-6">
+          <div class="flex items-center gap-2">
+            <span class="h-3 w-3 rounded-full bg-red-500/80"></span>
+            <span class="h-3 w-3 rounded-full bg-yellow-500/80"></span>
+            <span class="h-3 w-3 rounded-full bg-green-500/80"></span>
+            <span class="ml-2 text-xs font-mono text-zinc-500">interactive_demo.rs</span>
+          </div>
+          
+          <!-- Mode Tabs -->
+          <div class="flex rounded-lg bg-brand-dark-950 p-1 border border-brand-dark-800">
+            <button (click)="activeTab.set('telex')" 
+                    [class]="activeTab() === 'telex' ? 'bg-brand-orange-500 text-white' : 'text-zinc-400 hover:text-white'"
+                    class="rounded-md px-3 py-1 text-xs font-medium transition-all duration-200">
+              Telex
+            </button>
+            <button (click)="activeTab.set('vni')" 
+                    [class]="activeTab() === 'vni' ? 'bg-brand-orange-500 text-white' : 'text-zinc-400 hover:text-white'"
+                    class="rounded-md px-3 py-1 text-xs font-medium transition-all duration-200">
+              VNI
+            </button>
+          </div>
+        </div>
+
+        <!-- Typing Area -->
+        <div class="space-y-5">
+          <!-- Raw Keystrokes Input -->
+          <div>
+            <label class="block text-xs font-semibold uppercase tracking-wider text-zinc-500 mb-2">
+              Bạn gõ (Raw Keystrokes)
+            </label>
+            <div class="relative">
+              <input type="text" 
+                     [value]="rawInput()"
+                     (input)="onInputChange($event)"
+                     placeholder="Gõ thử không dấu tại đây..." 
+                     class="w-full rounded-xl border border-brand-dark-700 bg-brand-dark-950 px-4 py-3.5 font-mono text-white placeholder-zinc-600 focus:border-brand-orange-500 focus:outline-none focus:ring-1 focus:ring-brand-orange-500 transition-all duration-200" />
+              @if (rawInput()) {
+                <button (click)="clearDemo()" class="absolute right-3 top-1/2 -translate-y-1/2 text-zinc-500 hover:text-zinc-300">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              }
+            </div>
+          </div>
+
+          <!-- Vietnamese Output -->
+          <div>
+            <label class="block text-xs font-semibold uppercase tracking-wider text-zinc-500 mb-2">
+              Funput xuất ra (Vietnamese Output)
+            </label>
+            <div class="min-h-[60px] flex items-center w-full rounded-xl border border-brand-dark-800 bg-brand-dark-950/50 px-4 py-3.5 font-sans text-lg font-medium text-brand-orange-500">
+              @if (translatedOutput()) {
+                <span class="animate-fade-in">{{ translatedOutput() }}</span>
+                <span class="ml-1 h-5 w-1 bg-brand-orange-500 animate-pulse"></span>
+              } @else {
+                <span class="text-zinc-600 italic text-sm">Kết quả tiếng Việt có dấu xuất hiện tại đây...</span>
+              }
+            </div>
+          </div>
+
+          <!-- Quick Samples -->
+          <div>
+            <span class="block text-xs font-semibold uppercase tracking-wider text-zinc-500 mb-3">
+              Bấm để gõ thử nhanh:
+            </span>
+            <div class="flex flex-wrap gap-2">
+              @if (activeTab() === 'telex') {
+                @for (sample of telexSamples; track sample.label) {
+                  <button (click)="selectSample(sample)" 
+                          class="rounded-full border border-brand-dark-700 bg-brand-dark-950 px-3.5 py-1.5 text-xs text-zinc-400 hover:border-brand-orange-500/50 hover:text-brand-orange-500 transition-all duration-200">
+                    {{ sample.label }}
+                  </button>
+                }
+              } @else {
+                @for (sample of vniSamples; track sample.label) {
+                  <button (click)="selectSample(sample)" 
+                          class="rounded-full border border-brand-dark-700 bg-brand-dark-950 px-3.5 py-1.5 text-xs text-zinc-400 hover:border-brand-orange-500/50 hover:text-brand-orange-500 transition-all duration-200">
+                    {{ sample.label }}
+                  </button>
+                }
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,16 @@
+# Funput
+
+> Bộ gõ tiếng Việt Telex & VNI cho macOS, Windows, Linux. Open source, miễn phí.
+
+## Links
+
+- Website: https://funput.pulsefu.com
+- Download: https://github.com/pcodedynamics/Funput/releases
+- Source: https://github.com/pcodedynamics/Funput
+- Contact: pcodedynamics@gmail.com
+- Fanpage: https://www.facebook.com/pulsefu/
+
+## About
+
+Funput is a cross-platform Vietnamese input method supporting Telex and VNI typing.
+Built with Rust, open source under MIT license by PulseFu.
