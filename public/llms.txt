@@ -7,8 +7,8 @@
 - Website: https://funput.app
 - Download: https://github.com/Funput/Funput/releases
 - Source: https://github.com/Funput/Funput
-- Contact: pcodedynamics@gmail.com
-- Fanpage: https://www.facebook.com/funput/
+- Contact: hello@funput.app
+- Fanpage: https://www.facebook.com/Funput/
 
 ## About
 
