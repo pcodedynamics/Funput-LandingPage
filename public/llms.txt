@@ -4,13 +4,13 @@
 
 ## Links
 
-- Website: https://funput.pulsefu.com
-- Download: https://github.com/PulseFu/Funput/releases
-- Source: https://github.com/PulseFu/Funput
+- Website: https://funput.app
+- Download: https://github.com/Funput/Funput/releases
+- Source: https://github.com/Funput/Funput
 - Contact: pcodedynamics@gmail.com
-- Fanpage: https://www.facebook.com/pulsefu/
+- Fanpage: https://www.facebook.com/funput/
 
 ## About
 
 Funput is a cross-platform Vietnamese input method supporting Telex and VNI typing.
-Built with Rust, open source under MIT license by PulseFu.
+Built with Rust, open source under MIT license by Funput.
