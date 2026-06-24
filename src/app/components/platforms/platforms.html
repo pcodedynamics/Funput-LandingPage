@@ -117,10 +117,16 @@
           
           <h3 class="text-xl font-bold text-white mb-3">Linux</h3>
           <p class="text-zinc-400 text-sm leading-relaxed mb-6">
-            Addon Fcitx5 viết bằng C++ bọc lõi Rust. Hoạt động hoàn hảo trên cả môi trường X11 và Wayland.
+            Hỗ trợ Fcitx5 và IBus trên cùng lõi Rust. Input method engine thực sự với preedit/commit chuẩn, hoạt động ổn định trên X11 và Wayland.
           </p>
 
           <ul class="space-y-3 text-sm text-zinc-500 mb-8">
+            <li class="flex items-start gap-2.5">
+              <svg class="h-5 w-5 text-brand-orange-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>Tích hợp Fcitx5 và IBus</span>
+            </li>
             <li class="flex items-start gap-2.5">
               <svg class="h-5 w-5 text-brand-orange-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
@@ -131,20 +137,14 @@
               <svg class="h-5 w-5 text-brand-orange-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
               </svg>
-              <span>Tích hợp mượt mà với Fcitx5</span>
-            </li>
-            <li class="flex items-start gap-2.5">
-              <svg class="h-5 w-5 text-brand-orange-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-              </svg>
-              <span>Đóng gói dạng .deb cài đặt cực nhanh</span>
+              <span>Gói .deb riêng cho từng framework</span>
             </li>
           </ul>
         </div>
 
         <a [href]="constants.RELEASES_URL" target="_blank" rel="noopener"
            class="w-full inline-flex items-center justify-center rounded-xl bg-brand-dark-950 border border-brand-dark-700 py-3 text-sm font-semibold text-white hover:border-brand-orange-500 hover:bg-brand-dark-900 transition-all duration-200">
-          Tải bản .deb
+          Tải bản .deb (Fcitx5 / IBus)
         </a>
       </div>
 
