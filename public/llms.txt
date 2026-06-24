@@ -8,7 +8,7 @@
 - Download: https://github.com/Funput/Funput/releases
 - Source: https://github.com/Funput/Funput
 - Contact: hello@funput.app
-- Fanpage: https://www.facebook.com/Funput/
+- Fanpage: https://www.facebook.com/FunputIME/
 
 ## About
 
